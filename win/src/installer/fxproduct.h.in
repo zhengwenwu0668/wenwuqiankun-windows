@@ -1,0 +1,16 @@
+#pragma once
+
+// 安装器与卸载器共用的产品身份。值由 CMake 从工程变量注入，
+// 这样产物名、包名一旦改动，安装器不会悄悄留下一个对不上的旧名字。
+#define FX_APP_NAME   L"@FX_APP_NAME@"
+#define FX_APP_ID     L"@FX_APP_ID@"
+#define FX_EXE_NAME   L"@FX_EXE_NAME@"
+#define FX_PUBLISHER  L"@FX_PUBLISHER@"
+#define FX_VERSION    L"@FX_VERSION@"
+#define FX_UNINSTALL_NAME L"uninstall.exe"
+
+// 载荷以 RT_RCDATA 内嵌在 setup.exe 里，资源号在 .rc 与安装代码两边必须一致。
+#define FX_PAYLOAD_RCDATA_ID 101
+
+// HKCU 卸载项：当前用户安装，不需要管理员，也不碰 HKLM。
+#define FX_UNINSTALL_KEY L"Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\" FX_APP_ID

@@ -1,0 +1,36 @@
+// 由 CMake 从 setup.rc.in 生成。三段资源：太极图标、asInvoker 清单、内嵌 FXPK 载荷。
+// 载荷资源号 101 必须与 fxproduct.h 的 FX_PAYLOAD_RCDATA_ID 一致。
+// VERSIONINFO 里的字符串只写 ASCII：windres 不按 UTF-8 解析 .rc，中文会编成乱码；
+// 界面上的中文名走的是 C++ 宽字面量，跟这里无关。
+#include <winres.h>
+#include <winver.h>
+
+1 ICON "@FX_ICO@"
+1 RT_MANIFEST "@FX_MANIFEST@"
+101 RCDATA "@FX_PAYLOAD@"
+
+1 VERSIONINFO
+FILEVERSION @FX_VERSION_NUMERIC@
+PRODUCTVERSION @FX_VERSION_NUMERIC@
+FILEOS VOS_NT_WINDOWS32
+FILETYPE VFT_APP
+{
+    BLOCK "StringFileInfo"
+    {
+        BLOCK "080404b0"
+        {
+            VALUE "CompanyName", "@FX_PUBLISHER_ASCII@"
+            VALUE "FileDescription", "@FX_APP_ID@ setup"
+            VALUE "FileVersion", "@FX_VERSION@"
+            VALUE "InternalName", "@FX_APP_ID@-setup"
+            VALUE "LegalCopyright", "Copyright (C) 2026 @FX_PUBLISHER_ASCII@"
+            VALUE "OriginalFilename", "@FX_SETUP_NAME@"
+            VALUE "ProductName", "@FX_APP_ID@"
+            VALUE "ProductVersion", "@FX_VERSION@"
+        }
+    }
+    BLOCK "VarFileInfo"
+    {
+        VALUE "Translation", 0x0804, 0x04b0
+    }
+}

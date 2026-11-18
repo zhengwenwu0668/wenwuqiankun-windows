@@ -1,0 +1,33 @@
+// 由 CMake 从 uninstall.rc.in 生成。卸载器没有内嵌载荷，只有图标 + 清单 + 版本信息。
+// 字符串同样只写 ASCII，原因见 setup.rc.in 顶部注释。
+#include <winres.h>
+#include <winver.h>
+
+1 ICON "@FX_ICO@"
+1 RT_MANIFEST "@FX_MANIFEST@"
+
+1 VERSIONINFO
+FILEVERSION @FX_VERSION_NUMERIC@
+PRODUCTVERSION @FX_VERSION_NUMERIC@
+FILEOS VOS_NT_WINDOWS32
+FILETYPE VFT_APP
+{
+    BLOCK "StringFileInfo"
+    {
+        BLOCK "080404b0"
+        {
+            VALUE "CompanyName", "@FX_PUBLISHER_ASCII@"
+            VALUE "FileDescription", "@FX_APP_ID@ uninstaller"
+            VALUE "FileVersion", "@FX_VERSION@"
+            VALUE "InternalName", "@FX_APP_ID@-uninstall"
+            VALUE "LegalCopyright", "Copyright (C) 2026 @FX_PUBLISHER_ASCII@"
+            VALUE "OriginalFilename", "uninstall.exe"
+            VALUE "ProductName", "@FX_APP_ID@"
+            VALUE "ProductVersion", "@FX_VERSION@"
+        }
+    }
+    BLOCK "VarFileInfo"
+    {
+        VALUE "Translation", 0x0804, 0x04b0
+    }
+}
