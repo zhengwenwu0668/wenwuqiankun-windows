@@ -1,0 +1,19 @@
+# IDE
+.idea/
+*.iml
+
+# 工具目录
+.qoder/
+.qoder-office-xlsx-locks/
+
+# 临时/锁文件
+~$*
+*.tmp
+
+# 备份/副本文件
+*.backup-*
+*副本*
+
+# 系统文件
+Thumbs.db
+.DS_Store
