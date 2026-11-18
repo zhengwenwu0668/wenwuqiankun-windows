@@ -1,0 +1,10 @@
+# CMake/MinGW 构建产物与 windeployqt 独立分发包，全部可再生成，不进 git
+build*/
+dist/
+
+# 校对用截图与临时输出
+shots/
+*.log
+
+# 移植期排查 CRT 冲突的临时探针，不属于产品代码
+tests/qstr_probe.cpp
